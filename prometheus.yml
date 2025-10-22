@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'graphrag'
+    static_configs:
+      - targets: ['graphrag-service:8001']

@@ -1,0 +1,81 @@
+{
+  "id": null,
+  "title": "GraphRAG Service Metrics",
+  "tags": ["GraphRAG", "LangChain", "FastAPI"],
+  "timezone": "browser",
+  "schemaVersion": 30,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Query Latency (seconds)",
+      "targets": [
+        {
+          "expr": "graphrag_latency_seconds_sum / graphrag_latency_seconds_count",
+          "legendFormat": "avg latency",
+          "refId": "A"
+        }
+      ],
+      "lines": true,
+      "linewidth": 2,
+      "fill": 1,
+      "span": 12
+    },
+    {
+      "type": "stat",
+      "title": "Total Requests",
+      "targets": [
+        {
+          "expr": "graphrag_requests_total",
+          "refId": "B"
+        }
+      ],
+      "span": 4
+    },
+    {
+      "type": "gauge",
+      "title": "Graph Nodes",
+      "targets": [
+        {
+          "expr": "graphrag_nodes_total",
+          "refId": "C"
+        }
+      ],
+      "max": 1000,
+      "min": 0,
+      "span": 4
+    },
+    {
+      "type": "gauge",
+      "title": "Graph Edges",
+      "targets": [
+        {
+          "expr": "graphrag_edges_total",
+          "refId": "D"
+        }
+      ],
+      "max": 2000,
+      "min": 0,
+      "span": 4
+    },
+    {
+      "type": "table",
+      "title": "Latency by Query (summary)",
+      "targets": [
+        {
+          "expr": "graphrag_latency_seconds_sum",
+          "legendFormat": "{{instance}}",
+          "refId": "E"
+        }
+      ],
+      "span": 12
+    }
+  ],
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  }
+}

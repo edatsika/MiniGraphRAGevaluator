@@ -1,0 +1,54 @@
+{
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Total QA Requests",
+      "id": 101,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "graphrag_requests_total",
+          "legendFormat": "Total requests",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 },
+      "lines": true,
+      "linewidth": 2,
+      "fill": 1
+    },
+    {
+      "type": "stat",
+      "title": "Current QA Requests",
+      "id": 102,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "graphrag_requests_total",
+          "instant": true,
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 12, "y": 0, "w": 6, "h": 4 },
+      "colorMode": "value",
+      "graphMode": "none"
+    },
+    {
+      "type": "graph",
+      "title": "QA Requests per Second",
+      "id": 103,
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(graphrag_requests_total[1m])",
+          "legendFormat": "Requests/sec",
+          "refId": "A"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 },
+      "lines": true,
+      "linewidth": 2,
+      "fill": 1
+    }
+  ]
+}
