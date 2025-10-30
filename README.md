@@ -1,4 +1,4 @@
-# 🧠 MiniGraphRAG Evaluator
+# 🧩 MiniGraphRAG Evaluator
 
 A lightweight **Graph-based Retrieval-Augmented Generation (GraphRAG)** evaluator built with **FastAPI**, **LangChain**, **Prometheus**, and **Grafana**.  
 This project demonstrates how to analyze and query textual data using graph relationships and monitor model performance metrics in real time.
